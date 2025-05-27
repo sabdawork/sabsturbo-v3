@@ -153,6 +153,9 @@ importers:
 
   packages/ui:
     dependencies:
+      '@repo/tailwind-config':
+        specifier: workspace:*
+        version: link:../tailwind-config
       react:
         specifier: ^19.1.0
         version: 19.1.0
