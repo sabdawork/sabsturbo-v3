@@ -11,9 +11,7 @@
   },
   "lint-staged": {
     "*.{tsx,ts,js,json,md}": "pnpm format",
-    "*.ts": [
-      "pnpm lint"
-    ]
+    "*.{tsx,ts}": "pnpm lint"
   },
   "devDependencies": {
     "@commitlint/cli": "^19.8.1",
