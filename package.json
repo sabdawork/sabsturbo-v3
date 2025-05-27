@@ -10,7 +10,7 @@
     "prepare": "husky"
   },
   "lint-staged": {
-    "*.{ts,js,json,md}": "pnpm format",
+    "*.{tsx,ts,js,json,md}": "pnpm format",
     "*.ts": [
       "pnpm lint"
     ]
