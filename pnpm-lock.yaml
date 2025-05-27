@@ -24,6 +24,9 @@ importers:
       '@commitlint/config-conventional':
         specifier: ^19.8.1
         version: 19.8.1
+      '@repo/eslint-config':
+        specifier: workspace:*
+        version: link:packages/eslint-config
       daisyui:
         specifier: ^5.0.38
         version: 5.0.38

@@ -3,7 +3,6 @@ import './global.css';
 import type { Metadata } from 'next';
 import localFont from 'next/font/local';
 
-const name = 'sabda';
 const geistSans = localFont({
   src: './fonts/GeistVF.woff',
   variable: '--font-geist-sans',
@@ -25,7 +24,6 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <div className="hidden" />
       <body className={`${geistSans.variable} ${geistMono.variable}`}>{children}</body>
     </html>
   );

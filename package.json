@@ -5,15 +5,19 @@
     "build": "turbo run build",
     "dev": "turbo run dev",
     "lint": "turbo run lint",
+    "lint:staged": "eslint --fix",
     "format": "prettier --write \"**/*.{ts,tsx,md}\"",
     "check-types": "turbo run check-types",
     "prepare": "husky"
   },
   "lint-staged": {
     "*.{tsx,ts,js,json,md}": "pnpm format",
-    "*.{tsx,ts}": "pnpm lint"
+    "*.{tsx,ts}": [
+      "pnpm lint:staged"
+    ]
   },
   "devDependencies": {
+    "@repo/eslint-config": "workspace:*",
     "@commitlint/cli": "^19.8.1",
     "@commitlint/config-conventional": "^19.8.1",
     "daisyui": "^5.0.38",
