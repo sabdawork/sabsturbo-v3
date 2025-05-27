@@ -1,84 +1,79 @@
-# Turborepo starter
+# M2-B2C V.3
 
-This Turborepo starter is maintained by the Turborepo core team.
+This is a monorepo powered by [Turborepo](https://turbo.build/repo) using `pnpm` as the package manager. It contains apps and shared packages for a scalable and consistent development experience.
 
-## Using this example
+---
 
-Run the following command:
+## 🚀 Getting Started
 
-```sh
-npx create-turbo@latest
+### 1. Install dependencies
+
+```bash
+pnpm install
 ```
 
-## What's inside?
+### 2. Run all apps in development
 
-This Turborepo includes the following packages/apps:
-
-### Apps and Packages
-
-- `docs`: a [Next.js](https://nextjs.org/) app
-- `web`: another [Next.js](https://nextjs.org/) app
-- `@repo/ui`: a stub React component library shared by both `web` and `docs` applications
-- `@repo/eslint-config`: `eslint` configurations (includes `eslint-config-next` and `eslint-config-prettier`)
-- `@repo/typescript-config`: `tsconfig.json`s used throughout the monorepo
-
-Each package/app is 100% [TypeScript](https://www.typescriptlang.org/).
-
-### Utilities
-
-This Turborepo has some additional tools already setup for you:
-
-- [TypeScript](https://www.typescriptlang.org/) for static type checking
-- [ESLint](https://eslint.org/) for code linting
-- [Prettier](https://prettier.io) for code formatting
-
-### Build
-
-To build all apps and packages, run the following command:
-
-```
-cd my-turborepo
-pnpm build
-```
-
-### Develop
-
-To develop all apps and packages, run the following command:
-
-```
-cd my-turborepo
+```bash
 pnpm dev
 ```
 
-### Remote Caching
+Or run a specific app:
 
-> [!TIP]
-> Vercel Remote Cache is free for all plans. Get started today at [vercel.com](https://vercel.com/signup?/signup?utm_source=remote-cache-sdk&utm_campaign=free_remote_cache).
-
-Turborepo can use a technique known as [Remote Caching](https://turborepo.com/docs/core-concepts/remote-caching) to share cache artifacts across machines, enabling you to share build caches with your team and CI/CD pipelines.
-
-By default, Turborepo will cache locally. To enable Remote Caching you will need an account with Vercel. If you don't have an account you can [create one](https://vercel.com/signup?utm_source=turborepo-examples), then enter the following commands:
-
-```
-cd my-turborepo
-npx turbo login
+```bash
+turbo run dev --filter APP_NAME
 ```
 
-This will authenticate the Turborepo CLI with your [Vercel account](https://vercel.com/docs/concepts/personal-accounts/overview).
+### 3. Lint and format
 
-Next, you can link your Turborepo to your Remote Cache by running the following command from the root of your Turborepo:
-
+```bash
+pnpm lint
+pnpm format
 ```
-npx turbo link
+
+---
+
+## 🛠 Scaffolding a New App
+
+Use the built-in script to create a new app from `_template`:
+
+```bash
+chmod +x generate-app.sh
+./generate-app.sh
 ```
 
-## Useful Links
+It will:
 
-Learn more about the power of Turborepo:
+- Ask for the new app name
+- Copy from `apps/_template` to `apps/<your-app>`
+- Update the `package.json` name
+- Run `pnpm install`
 
-- [Tasks](https://turborepo.com/docs/crafting-your-repository/running-tasks)
-- [Caching](https://turborepo.com/docs/crafting-your-repository/caching)
-- [Remote Caching](https://turborepo.com/docs/core-concepts/remote-caching)
-- [Filtering](https://turborepo.com/docs/crafting-your-repository/running-tasks#using-filters)
-- [Configuration Options](https://turborepo.com/docs/reference/configuration)
-- [CLI Usage](https://turborepo.com/docs/reference/command-line-reference)
+---
+
+## ✅ Tooling
+
+- **Turborepo** — Task and cache orchestration
+- **pnpm** — Fast package manager
+- **Next.js** — App framework
+- **TypeScript** — Type-safe development
+- **ESLint + Prettier** — Code quality
+- **TailwindCSS** — Utility-first CSS
+- **Husky + lint-staged** — Pre-commit hooks
+
+---
+
+## 📦 Shared Packages
+
+- `@repo/eslint-config`
+- `@repo/tailwind-config`
+- `@repo/typescript-config`
+- `@repo/ui`
+
+These are consumed by apps to ensure consistency.
+
+---
+
+## 📄 License
+
+MIT
